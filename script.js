@@ -66,6 +66,26 @@ function exHanoi_2(A, B, C, D, n) {
     hanoi(D, B, C, n);
 }
 function exhanoi_3(A, B, C, n) {
+    
+    if(n==1){
+        moves.push([A,C]);
+        moves.push([B,C]);
+        }
+        else{
+        exhanoi_3(A,B,C,n-1);
+        moves.push([B,A]);
+        hanoi(C,B,A,2*(n-1));
+        hanoi(A,B,C,2*n);
+        }/*
+    if (n == 1) {
+        moves.push([A, C]);
+        moves.push([B, C]);
+    }
+    else {
+        exhanoi_3(A, B, C, n - 1)
+        hanoi(C, A, B, n)
+        moves.push([A, C]);*/
+    }
 }
 function moveDisks(from, to) {
     const fromEl = rods[from];
