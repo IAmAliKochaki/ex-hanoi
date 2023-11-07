@@ -63,15 +63,9 @@ function exHanoi_1(A, B, C, n) {
 function exHanoi_2(A, B, C, D, n) {
     hanoi(A, B, D, n);
     hanoi(C, B, A, n);
+    hanoi(D, B, C, n);
 }
 function exhanoi_3(A, B, C, n) {
-    if (n == 0)
-        return;
-    else {
-        exhanoi_3(A, C, B, n - 1);
-        moves.push([C, A]);
-        exhanoi_3(B, A, C, n - 1);
-    }
 }
 function moveDisks(from, to) {
     const fromEl = rods[from];
